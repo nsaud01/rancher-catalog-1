@@ -1,0 +1,15 @@
+cours:
+  image: vibioh/node:latest
+  restart: 'no'
+  labels:
+    traefik.frontend.rule: 'Host'
+    traefik.frontend.value: 'cours.vibioh.fr'
+    traefik.frontend.passHostHeader: 'true'
+    traefik.port: '3000'
+  volumes:
+  - /home/vibioh/code/md-genie-logiciel:/usr/src
+  - /var/node:/usr/node
+  working_dir: /usr/src
+  read_only: true
+  cpu_shares: 512
+  mem_limit: 268435456

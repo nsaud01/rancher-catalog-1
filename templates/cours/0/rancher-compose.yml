@@ -1,0 +1,7 @@
+.catalog:
+  name: Cours
+  version: latest
+  description: Cours de Génie Logiciel en Licence Miage
+  uuid: cours-0
+cours:
+  scale: 1

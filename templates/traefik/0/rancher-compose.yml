@@ -1,0 +1,7 @@
+.catalog:
+  name: Traefik
+  version: latest
+  description: Reverse proxy made simple
+  uuid: traefik-0
+traefik:
+  scale: 1
