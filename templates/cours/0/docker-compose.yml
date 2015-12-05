@@ -1,5 +1,6 @@
 cours:
   image: vibioh/node:latest
+  command: node ./server/server.js
   restart: 'no'
   labels:
     traefik.frontend.rule: 'Host'
