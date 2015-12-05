@@ -10,6 +10,7 @@ traefik:
   volumes:
   - /var/run/docker.sock:/var/run/docker.sock
   - /var/traefik/traefik.toml:/traefik.toml
+  read_only: true
   restart: 'no'
   cpu_shares: 256
   mem_limit: 134217728
