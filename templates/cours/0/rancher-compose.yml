@@ -9,6 +9,6 @@
     label: "Domaine :"
     required: true
     default: "vibioh.fr"
-    type: "String"
+    type: "string"
 cours:
   scale: 1

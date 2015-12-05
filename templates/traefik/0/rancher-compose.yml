@@ -9,7 +9,7 @@
     label: "Domaine :"
     required: true
     default: "vibioh.fr"
-    type: "String"
+    type: "string"
   - variable: "LISTEN_PORT"
     description: "Port on which reverse-proxy listen"
     label: "Port :"
