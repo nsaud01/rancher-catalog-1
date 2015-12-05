@@ -6,7 +6,7 @@
   questions:
   - variable: "DOMAIN"
     description: "Domain name"
-    label: "Domaine :"
+    label: "Domain:"
     required: true
     default: "vibioh.fr"
     type: "string"
@@ -18,7 +18,7 @@
     type: "int"
   - variable: "WEB_PORT"
     description: "Port on which webapp listen"
-    label: "WebApp port :"
+    label: "WebApp port:"
     required: true
     default: "8080"
     type: "int"

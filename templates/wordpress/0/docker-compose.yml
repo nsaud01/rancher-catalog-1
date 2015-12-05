@@ -1,0 +1,34 @@
+wordpress:
+  image: vibioh/wordpress:latest
+  volumes:
+    - ${WORDPRESS_DIRECTORY}/${WORDPRESS_NAME}/mysql:/var/lib/mysql
+    - ${WORDPRESS_DIRECTORY}/${WORDPRESS_NAME}/wp-content:/var/www/localhost/wp-content
+  read_only: true
+mysql:
+  image: vibioh/mysql:latest
+  environment:
+    - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD}
+    - MYSQL_DATABASE=wordpress
+    - MYSQL_USER=${WORDPRESS_NAME}
+    - MYSQL_PASSWORD=${WORDPRESS_PASSWORD}
+  volumes_from:
+    - wordpress
+  restart: 'no'
+  read_only: true
+  cpu_shares: 512
+  mem_limit: 268435456
+php:
+  image: vibioh/php:latest
+  links:
+    - mysql
+  labels:
+    traefik.port: '1080'
+    traefik.frontend.rule: 'Host'
+    traefik.frontend.value: '${WORDPRESS_NAME}.${DOMAIN}'
+    traefik.frontend.passHostHeader: 'true'
+  volumes_from:
+    - wordpress
+  restart: 'no'
+  read_only: true
+  cpu_shares: 512
+  mem_limit: 268435456
