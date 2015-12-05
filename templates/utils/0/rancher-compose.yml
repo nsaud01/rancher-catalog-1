@@ -1,8 +1,8 @@
 .catalog:
-  name: Cours
+  name: Maildev
   version: latest
-  description: Cours de Génie Logiciel en Licence Miage
-  uuid: cours-0
+  description: SMTP Mock
+  uuid: maildev-0
   questions:
   - variable: "DOMAIN"
     description: "Domain name"
