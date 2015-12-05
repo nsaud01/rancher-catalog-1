@@ -1,8 +1,5 @@
 wordpress:
   image: vibioh/wordpress:latest
-  volumes:
-    - ${WORDPRESS_DIRECTORY}/${WORDPRESS_NAME}/mysql:/var/lib/mysql
-    - ${WORDPRESS_DIRECTORY}/${WORDPRESS_NAME}/wp-content:/var/www/localhost/wp-content
   read_only: true
 mysql:
   image: vibioh/mysql:latest
