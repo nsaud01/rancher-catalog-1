@@ -1,7 +1,7 @@
 wordpress:
   image: vibioh/wordpress:latest
   labels:
-    io.rancher.sidekicks: mysql,php
+    io.rancher.sidekicks: mysql, php
   restart: 'no'
   read_only: true
   cpu_shares: 128
