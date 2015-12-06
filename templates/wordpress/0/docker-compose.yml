@@ -1,6 +1,9 @@
 wordpress:
   image: vibioh/wordpress:latest
+  restart: 'no'
   read_only: true
+  cpu_shares: 128
+  mem_limit: 67108864
 mysql:
   image: vibioh/mysql:latest
   environment:
