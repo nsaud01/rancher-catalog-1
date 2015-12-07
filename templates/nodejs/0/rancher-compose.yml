@@ -2,7 +2,7 @@
   name: NodeJS
   version: latest
   description: NodeJS Application Server
-  uuid: node-0
+  uuid: nodejs-0
   questions:
   - variable: 'DOMAIN'
     description: 'Domain name'

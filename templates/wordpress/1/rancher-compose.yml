@@ -2,7 +2,7 @@
   name: Wordpress
   version: External volumes
   description: Blogging and Site
-  uuid: wordpress-external-0
+  uuid: wordpress-1
   questions:
   - variable: 'DOMAIN'
     description: 'Domain name'
