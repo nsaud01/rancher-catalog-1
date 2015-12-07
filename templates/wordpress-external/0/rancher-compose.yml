@@ -1,8 +1,8 @@
 .catalog:
   name: Wordpress
-  version: 'External volumes'
-  description: 'Blogging and Site'
-  uuid: wordpress-1
+  version: latest
+  description: Blogging and Site
+  uuid: wordpress-external-0
   questions:
   - variable: 'DOMAIN'
     description: 'Domain name'
