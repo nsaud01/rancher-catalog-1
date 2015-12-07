@@ -1,7 +1,7 @@
 .catalog:
   name: Wordpress
-  version: Data container
-  description: Blogging and Site
+  version: 'Data container'
+  description: 'Blogging and Site'
   uuid: wordpress-0
   questions:
   - variable: 'DOMAIN'
