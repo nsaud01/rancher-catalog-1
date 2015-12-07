@@ -4,11 +4,11 @@
   description: SMTP Mock
   uuid: maildev-0
   questions:
-  - variable: "DOMAIN"
-    description: "Domain name"
-    label: "Domain:"
+  - variable: 'DOMAIN'
+    description: 'Domain name'
+    label: 'Domain:'
     required: true
-    default: "vibioh.fr"
-    type: "string"
+    default: 'vibioh.fr'
+    type: 'string'
 cours:
   scale: 1

@@ -4,30 +4,30 @@
   description: Blogging and Site
   uuid: wordpress-0
   questions:
-  - variable: "DOMAIN"
-    description: "Domain name"
-    label: "Domain:"
+  - variable: 'DOMAIN'
+    description: 'Domain name'
+    label: 'Domain:'
     required: true
-    default: "vibioh.fr"
-    type: "string"
-  - variable: "WORDPRESS_NAME"
-    description: "Wordpress instance name"
-    label: "Wordpress name:"
+    default: 'vibioh.fr'
+    type: 'string'
+  - variable: 'WORDPRESS_NAME'
+    description: 'Wordpress instance name'
+    label: 'Wordpress name:'
     required: true
-    default: "demo"
-    type: "string"
-  - variable: "WORDPRESS_PASSWORD"
-    description: "Wordpress MySQL database password"
-    label: "Database password:"
+    default: 'demo'
+    type: 'string'
+  - variable: 'WORDPRESS_PASSWORD'
+    description: 'Wordpress MySQL database password'
+    label: 'Database password:'
     required: true
-    default: "W0RDPR3SS!"
-    type: "string"
-  - variable: "MYSQL_PASSWORD"
-    description: "MySQL root password"
-    label: "MySQL password:"
+    default: 'W0RDPR3SS!'
+    type: 'string'
+  - variable: 'MYSQL_PASSWORD'
+    description: 'MySQL root password'
+    label: 'MySQL password:'
     required: true
-    default: "s3Cr3T!"
-    type: "string"
+    default: 's3Cr3T!'
+    type: 'string'
 wordpress:
   scale: 1
 mysql:
