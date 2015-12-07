@@ -16,12 +16,6 @@
     required: true
     default: "demo"
     type: "string"
-  - variable: "WORDPRESS_DIRECTORY"
-    description: "Directory where file are saved. Will be suffixed by Wordpress name"
-    label: "Wordpress dir:"
-    required: true
-    default: "/var/wordpress"
-    type: "string"
   - variable: "WORDPRESS_PASSWORD"
     description: "Wordpress MySQL database password"
     label: "Database password:"
