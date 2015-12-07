@@ -1,4 +1,4 @@
-cours:
+node:
   image: vibioh/node:latest
   command: node ${NODE_COMMAND}
   labels:

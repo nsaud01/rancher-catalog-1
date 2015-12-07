@@ -1,8 +1,8 @@
 .catalog:
-  name: Cours
+  name: NodeJS
   version: latest
-  description: Cours de Génie Logiciel en Licence Miage
-  uuid: cours-0
+  description: NodeJS Application Server
+  uuid: node-0
   questions:
   - variable: 'DOMAIN'
     description: 'Domain name'
@@ -40,5 +40,5 @@
     required: true
     default: '/var/node'
     type: 'string'
-cours:
+node:
   scale: 1
