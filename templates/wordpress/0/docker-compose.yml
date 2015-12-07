@@ -2,6 +2,7 @@ wordpress:
   image: vibioh/wordpress:latest
   labels:
     io.rancher.sidekicks: mysql, php
+    traefik.enable: false
   restart: 'no'
   read_only: true
   cpu_shares: 128
@@ -13,6 +14,8 @@ mysql:
     - MYSQL_DATABASE=wordpress
     - MYSQL_USER=${WORDPRESS_NAME}
     - MYSQL_PASSWORD=${WORDPRESS_PASSWORD}
+  labels:
+    traefik.enable: false
   volumes_from:
     - wordpress
   restart: 'no'
