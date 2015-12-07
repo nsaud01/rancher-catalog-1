@@ -34,9 +34,3 @@
     required: true
     default: '/var/wordpress'
     type: 'string'
-wordpress:
-  scale: 1
-mysql:
-  scale: 1
-php:
-  scale: 1
