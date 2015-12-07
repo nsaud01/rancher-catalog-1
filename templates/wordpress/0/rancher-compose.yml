@@ -28,9 +28,3 @@
     required: true
     default: 's3Cr3T!'
     type: 'string'
-wordpress:
-  scale: 1
-mysql:
-  scale: 1
-php:
-  scale: 1
