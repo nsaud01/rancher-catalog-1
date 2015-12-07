@@ -1,15 +1,15 @@
 cours:
   image: vibioh/node:latest
-  command: node ./server/server.js
+  command: node ${NODE_COMMAND}
   labels:
-    traefik.port: '3000'
+    traefik.port: ${NODE_PORT}
     traefik.frontend.rule: 'Host'
-    traefik.frontend.value: 'cours.${DOMAIN}'
+    traefik.frontend.value: '${SUBDOMAIN}.${DOMAIN}'
     traefik.frontend.passHostHeader: 'true'
   working_dir: /usr/src
   volumes:
-  - /home/vibioh/code/md-genie-logiciel:/usr/src
-  - /var/node:/usr/node
+  - ${WORKING_DIR}:/usr/src
+  - ${NODE_GLOBAL_DIR}:/usr/node
   read_only: true
   restart: 'no'
   cpu_shares: 512
