@@ -1,0 +1,12 @@
+jenkins:
+  image: jenkins:latest
+  labels:
+    traefik.port: '8080'
+    traefik.frontend.rule: 'Host'
+    traefik.frontend.value: 'jenkins.${DOMAIN}'
+    traefik.frontend.passHostHeader: 'true'
+  volumes:
+  - ${WORKING_DIR}:/var/jenkins_home
+  restart: 'no'
+  cpu_shares: 512
+  mem_limit: 1073741824
