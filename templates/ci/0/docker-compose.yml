@@ -1,9 +1,7 @@
 ci:
-  image: alpine:latest
-  command: 'tail -f /dev/null'
+  image: vibioh/ci:latest
   labels:
     io.rancher.sidekicks: jenkins, mysql, sonar
-    traefik.enable: false
   restart: 'no'
   read_only: true
   cpu_shares: 128
