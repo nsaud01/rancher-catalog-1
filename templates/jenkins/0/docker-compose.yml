@@ -6,12 +6,18 @@ jenkins:
     traefik.frontend.value: 'jenkins.${DOMAIN}'
     traefik.frontend.passHostHeader: 'true'
   volumes:
-  - ${JENKINS_DIR}:/var/jenkins_home
+    - ${JENKINS_DIR}:/var/jenkins_home
   restart: 'no'
   cpu_shares: 512
   mem_limit: 1073741824
 sonar:
   image: sonarqube:latest
+  links:
+    - mysql
+  environment:
+    - SONARQUBE_JDBC_USERNAME=sonar
+    - SONARQUBE_JDBC_PASSWORD=sonar
+    - SONARQUBE_JDBC_URL=jdbc:mysql://mysql/sonar
   labels:
     traefik.port: '9000'
     traefik.frontend.rule: 'Host'
@@ -20,3 +26,18 @@ sonar:
   restart: 'no'
   cpu_shares: 512
   mem_limit: 536870912
+mysql:
+  image: vibioh/mysql:latest
+  environment:
+    - MYSQL_ROOT_PASSWORD=s3Cr3T!
+    - MYSQL_DATABASE=sonar
+    - MYSQL_USER=sonar
+    - MYSQL_PASSWORD=sonar
+  labels:
+    traefik.enable: false
+  volumes:
+    - ${SONAR_DIR}:/var/lib/mysql
+  restart: 'no'
+  read_only: true
+  cpu_shares: 512
+  mem_limit: 268435456
