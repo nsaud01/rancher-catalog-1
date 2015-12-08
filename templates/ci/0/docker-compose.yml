@@ -25,7 +25,7 @@ sonar:
   environment:
     - SONARQUBE_JDBC_USERNAME=sonar
     - SONARQUBE_JDBC_PASSWORD=sonar
-    - SONARQUBE_JDBC_URL=jdbc:mysql://mysql/sonar?useUnicode=true
+    - SONARQUBE_JDBC_URL=jdbc:mysql://mysql/sonar?useUnicode=true&characterEncoding=utf8
   labels:
     traefik.port: '9000'
     traefik.frontend.rule: 'Host'
