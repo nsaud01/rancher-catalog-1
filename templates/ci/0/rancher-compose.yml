@@ -1,0 +1,12 @@
+.catalog:
+  name: Jenkins
+  version: latest
+  description: Jenkins Continuous Integration
+  uuid: jenkins-0
+  questions:
+  - variable: 'DOMAIN'
+    description: 'Domain name'
+    label: 'Domain:'
+    required: true
+    default: 'vibioh.fr'
+    type: 'string'
