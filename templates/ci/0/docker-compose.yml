@@ -7,7 +7,7 @@ ci:
   cpu_shares: 128
   mem_limit: 67108864
 jenkins:
-  image: jenkins:latest
+  image: vibioh/jenkins:latest
   labels:
     traefik.port: '8080'
     traefik.frontend.rule: 'Host'
@@ -25,7 +25,7 @@ sonar:
   environment:
     - SONARQUBE_JDBC_USERNAME=sonar
     - SONARQUBE_JDBC_PASSWORD=sonar
-    - SONARQUBE_JDBC_URL=jdbc:mysql://mysql/sonar?useUnicode=true&characterEncoding=utf8
+    - SONARQUBE_JDBC_URL=jdbc:mysql://mysql/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance
   labels:
     traefik.port: '9000'
     traefik.frontend.rule: 'Host'
