@@ -1,6 +1,6 @@
 ci:
   image: alpine:latest
-  command: 'taif -f /dev/null'
+  command: 'tail -f /dev/null'
   labels:
     io.rancher.sidekicks: jenkins, mysql, sonar
     traefik.enable: false
