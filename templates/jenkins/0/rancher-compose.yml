@@ -10,11 +10,13 @@
     required: true
     default: 'vibioh.fr'
     type: 'string'
-  - variable: 'WORKING_DIR'
-    description: 'Working directory path'
-    label: 'Working dir:'
+  - variable: 'JENKINS_DIR'
+    description: 'Working directory path for Jenkins'
+    label: 'Jenkins dir:'
     required: true
     default: '/var/jenkins'
     type: 'string'
 jenkins:
+  scale: 1
+sonar:
   scale: 1
