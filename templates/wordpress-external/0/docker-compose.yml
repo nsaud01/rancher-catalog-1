@@ -3,6 +3,9 @@ wordpress:
   labels:
     io.rancher.sidekicks: mysql, php
     traefik.enable: false
+  volumes:
+    - ${WORDPRESS_DIR}/${WORDPRESS_NAME}/mysql:/var/lib/mysql
+    - ${WORDPRESS_DIR}/${WORDPRESS_NAME}/www:/var/www/localhost
   restart: 'no'
   read_only: true
   cpu_shares: 128

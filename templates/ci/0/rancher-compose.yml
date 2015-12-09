@@ -10,3 +10,9 @@
     required: true
     default: 'vibioh.fr'
     type: 'string'
+  - variable: 'CI_DIR'
+    description: 'Storage directory'
+    label: 'Directory:'
+    required: true
+    default: '/var/ci'
+    type: 'string'

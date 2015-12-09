@@ -2,6 +2,9 @@ ci:
   image: vibioh/ci:latest
   labels:
     io.rancher.sidekicks: jenkins, mysql, sonar
+  volumes:
+    - ${CI_DIR}/jenkins:/var/jenkins_home
+    - ${CI_DIR}/mysql:/var/lib/mysql
   restart: 'no'
   cpu_shares: 128
   mem_limit: 67108864
