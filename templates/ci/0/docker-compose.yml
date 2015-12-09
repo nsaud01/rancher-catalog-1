@@ -3,11 +3,10 @@ ci:
   labels:
     io.rancher.sidekicks: jenkins, mysql, sonar
   restart: 'no'
-  read_only: true
   cpu_shares: 128
   mem_limit: 67108864
 jenkins:
-  image: vibioh/jenkins:latest
+  image: jenkins:latest
   labels:
     traefik.port: '8080'
     traefik.frontend.rule: 'Host'
