@@ -1,10 +1,10 @@
 ci:
   image: vibioh/ci:latest
   labels:
-    io.rancher.sidekicks: jenkins, mysql, sonar
+    io.rancher.sidekicks: jenkins, postgres, sonar
   volumes:
     - ${CI_DIR}/jenkins:/var/jenkins_home
-    - ${CI_DIR}/mysql:/var/lib/mysql
+    - ${CI_DIR}/postgres:/var/lib/postgresql/data
   restart: 'no'
   cpu_shares: 128
   mem_limit: 67108864
@@ -23,11 +23,11 @@ jenkins:
 sonar:
   image: sonarqube:latest
   links:
-    - mysql
+    - postgres:db
   environment:
     - SONARQUBE_JDBC_USERNAME=sonar
     - SONARQUBE_JDBC_PASSWORD=sonar
-    - SONARQUBE_JDBC_URL=jdbc:mysql://mysql/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance
+    - SONARQUBE_JDBC_URL=jdbc:postgres://db/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance
   labels:
     traefik.port: '9000'
     traefik.frontend.rule: 'Host'
@@ -38,18 +38,16 @@ sonar:
   restart: 'no'
   cpu_shares: 512
   mem_limit: 536870912
-mysql:
-  image: vibioh/mysql:latest
+postgres:
+  image: vibioh/postgres:latest
   environment:
-    - MYSQL_ROOT_PASSWORD=s3Cr3T!
-    - MYSQL_DATABASE=sonar
-    - MYSQL_USER=sonar
-    - MYSQL_PASSWORD=sonar
+    - POSTGRES_DB=sonar
+    - POSTGRES_USER=sonar
+    - POSTGRES_PASSWORD=sonar
   labels:
     traefik.enable: false
   volumes_from:
     - ci
   restart: 'no'
-  read_only: true
   cpu_shares: 512
   mem_limit: 268435456
