@@ -21,35 +21,3 @@ jenkins:
   restart: 'no'
   cpu_shares: 512
   mem_limit: 1073741824
-sonar:
-  image: sonarqube:latest
-  links:
-    - postgres
-  environment:
-    - SONARQUBE_JDBC_USERNAME=sonar
-    - SONARQUBE_JDBC_PASSWORD=sonar
-    - SONARQUBE_JDBC_URL=jdbc:postgresql://postgres:5432/sonar?useUnicode=true&characterEncoding=utf8
-  labels:
-    traefik.port: '9000'
-    traefik.frontend.rule: 'Host'
-    traefik.frontend.value: 'sonar.${DOMAIN}'
-    traefik.frontend.passHostHeader: 'true'
-  volumes_from:
-    - ci
-  restart: 'no'
-  cpu_shares: 512
-  mem_limit: 536870912
-postgres:
-  image: vibioh/postgres:latest
-  environment:
-    - POSTGRES_DB=sonar
-    - POSTGRES_USER=sonar
-    - POSTGRES_PASSWORD=sonar
-  labels:
-    traefik.enable: 'false'
-  volumes_from:
-    - ci
-  read_only: true
-  restart: 'no'
-  cpu_shares: 512
-  mem_limit: 268435456
