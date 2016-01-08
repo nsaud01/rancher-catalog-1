@@ -1,0 +1,12 @@
+.catalog:
+  name: Selenium
+  version: latest
+  description: Selenium Grid Browser
+  uuid: selenium-0
+  questions:
+  - variable: 'DOMAIN'
+    description: 'Domain name'
+    label: 'Domain:'
+    required: true
+    default: 'vibioh.fr'
+    type: 'string'

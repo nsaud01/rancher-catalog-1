@@ -1,0 +1,24 @@
+hub:
+  image: selenium/hub:latest
+  labels:
+    traefik.frontend.passHostHeader: 'true'
+    traefik.frontend.rule: 'Host'
+    traefik.frontend.value: 'selenium.${DOMAIN}'
+    traefik.port: '4444'
+  restart: 'no'
+  cpu_shares: 256
+  mem_limit: 268435456
+chrome:
+  image: selenium/node-chrome:latest
+  links:
+  - hub:hub
+  restart: 'no'
+  cpu_shares: 512
+  mem_limit: 536870912
+firefox:
+  image: selenium/node-firefox:latest
+  links:
+  - hub:hub
+  restart: 'no'
+  cpu_shares: 512
+  mem_limit: 536870912
