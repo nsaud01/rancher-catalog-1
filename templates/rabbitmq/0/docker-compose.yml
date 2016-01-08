@@ -1,5 +1,9 @@
 rabbitmq:
   image: rabbitmq:3-management
+  command:
+  - sh
+  - -c
+  - echo "[{rabbit, [{loopback_users, []}, {default_vhost,<<\"rabbit\">>}, {vm_memory_high_watermark, {absolute,471859200}}]}]." > /etc/rabbitmq/rabbitmq.config && rabbitmq-server
   ports:
   - 5672:5672/tcp
   labels:
@@ -7,6 +11,7 @@ rabbitmq:
     traefik.frontend.rule: 'Host'
     traefik.frontend.value: 'rabbit.${DOMAIN}'
     traefik.port: '15672'
+  restart: 'no'
   hostname: rabbitmq
   cpu_shares: 512
   mem_limit: 536870912
