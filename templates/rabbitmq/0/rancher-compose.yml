@@ -1,8 +1,8 @@
 .catalog:
-  name: Maildev
+  name: RabbitMQ 
   version: latest
-  description: SMTP Mock
-  uuid: maildev-0
+  description: AMQP 
+  uuid: rabbitmq-0
   questions:
   - variable: 'DOMAIN'
     description: 'Domain name'
