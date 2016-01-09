@@ -1,3 +1,4 @@
 name: Maildev
 description: SMTP Mock
-category: 'Utils'
+category: Utils
+version: latest

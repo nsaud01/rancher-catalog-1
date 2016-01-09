@@ -1,3 +1,4 @@
 name: Wordpress external volumes
 description: Blogging
-category: 'Blog'
+category: Blog
+version: latest

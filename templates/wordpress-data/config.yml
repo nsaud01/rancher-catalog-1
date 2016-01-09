@@ -1,3 +1,4 @@
 name: Wordpress data container
 description: Blogging
-category: 'Blog'
+category: Blog
+version: latest
