@@ -5,7 +5,7 @@
   questions:
   - variable: DOMAIN
     description: 'Domain name'
-    label: Domain:
+    label: 'Domain:'
     required: true
     default: vibioh.fr
     type: string

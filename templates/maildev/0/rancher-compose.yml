@@ -5,13 +5,13 @@
   questions:
   - variable: DOMAIN
     description: 'Domain name'
-    label: Domain:
+    label: 'Domain:'
     required: true
     default: vibioh.fr
     type: string
   - variable: SMTP_PORT
     description: 'SMTP port'
-    label: Port:
+    label: 'Port:'
     required: true
     default: 1025
     type: int

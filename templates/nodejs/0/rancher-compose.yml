@@ -5,13 +5,13 @@
   questions:
   - variable: DOMAIN
     description: 'Domain name'
-    label: Domain:
+    label: 'Domain:'
     required: true
     default: vibioh.fr
     type: string
   - variable: SUBDOMAIN
     description: 'Subdomain name'
-    label: Subdomain:
+    label: 'Subdomain:'
     required: true
     default: node
     type: string
