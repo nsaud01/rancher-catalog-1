@@ -1,5 +1,7 @@
 maildev:
   image: vibioh/maildev:latest
+  ports:
+  - 1025:${SMTP_PORT}/tcp
   labels:
     traefik.port: '1080'
     traefik.frontend.rule: 'Host'

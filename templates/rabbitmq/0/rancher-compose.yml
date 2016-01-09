@@ -14,4 +14,4 @@
     label: 'Port:'
     required: true
     default: '5672'
-    type: 'integer'
+    type: 'int'
