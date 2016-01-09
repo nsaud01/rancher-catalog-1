@@ -1,23 +1,23 @@
 .catalog:
-  name: 'Traefik'
-  version: 'latest'
-  uuid: 'traefik-0'
+  name: Traefik
+  version: latest
+  uuid: traefik-0
   questions:
-  - variable: 'DOMAIN'
+  - variable: DOMAIN
     description: 'Domain name'
-    label: 'Domain:'
+    label: Domain:
     required: true
-    default: 'vibioh.fr'
-    type: 'string'
-  - variable: 'LISTEN_PORT'
+    default: vibioh.fr
+    type: string
+  - variable: LISTEN_PORT
     description: 'Port on which reverse-proxy listen'
-    label: 'Port :'
+    label: Port:
     required: true
-    default: '80'
-    type: 'int'
-  - variable: 'WEB_PORT'
+    default: 80
+    type: int
+  - variable: WEB_PORT
     description: 'Port on which webapp listen'
     label: 'WebApp port:'
     required: true
-    default: '8080'
-    type: 'int'
+    default: 8080
+    type: int

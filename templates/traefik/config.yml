@@ -1,4 +1,4 @@
-name: 'Traefik'
+name: Traefik
 description: 'Reverse proxy'
-category: 'Utils'
-version: 'latest'
+category: Utils
+version: latest

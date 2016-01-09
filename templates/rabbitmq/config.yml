@@ -1,4 +1,4 @@
-name: 'RabbitMQ'
-description: 'AMQP'
-category: 'Utils'
-version: 'latest'
+name: RabbitMQ
+description: AMQP
+category: Utils
+version: latest

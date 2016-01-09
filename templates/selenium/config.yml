@@ -1,4 +1,4 @@
-name: 'Selenium'
+name: Selenium
 description: 'Selenium Grid'
-category: 'Utils'
-version: 'latest'
+category: Utils
+version: latest

@@ -1,4 +1,4 @@
-name: 'Wordpress external volumes'
-description: 'Blogging'
-category: 'Blog'
-version: 'latest'
+name: Wordpress
+description: Blogging
+category: Blog
+version: latest
