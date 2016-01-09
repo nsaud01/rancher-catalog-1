@@ -1,4 +1,4 @@
-name: Maildev
-description: SMTP Mock
-category: Utils
-version: latest
+name: 'Maildev'
+description: 'SMTP Mock'
+category: 'Utils'
+version: 'latest'

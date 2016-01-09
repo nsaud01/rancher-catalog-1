@@ -1,8 +1,7 @@
 .catalog:
-  name: Wordpress
-  version: latest
-  description: Blogging and Site
-  uuid: wordpress-data-0
+  name: 'Wordpress'
+  version: 'latest'
+  uuid: 'wordpress-data-0'
   questions:
   - variable: 'DOMAIN'
     description: 'Domain name'

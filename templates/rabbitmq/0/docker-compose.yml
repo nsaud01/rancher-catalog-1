@@ -5,7 +5,7 @@ rabbitmq:
   - -c
   - echo "[{rabbit, [{loopback_users, []}, {default_vhost,<<\"rabbit\">>}, {vm_memory_high_watermark, {absolute,471859200}}]}]." > /etc/rabbitmq/rabbitmq.config && rabbitmq-server
   ports:
-  - 5672:5672/tcp
+  - 5672:${RABBIT_PORT}/tcp
   labels:
     traefik.frontend.passHostHeader: 'true'
     traefik.frontend.rule: 'Host'

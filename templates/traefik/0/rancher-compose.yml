@@ -1,8 +1,7 @@
 .catalog:
-  name: Traefik
-  version: latest
-  description: Reverse proxy made simple
-  uuid: traefik-0
+  name: 'Traefik'
+  version: 'latest'
+  uuid: 'traefik-0'
   questions:
   - variable: 'DOMAIN'
     description: 'Domain name'

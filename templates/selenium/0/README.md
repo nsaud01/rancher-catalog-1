@@ -1,7 +1,5 @@
 # Selenium Grid
 
-## Info
-
 This template creates a Selenium Grid with two nodes connected : a Firefox and a Chrome.
 
 ## Usage
@@ -10,4 +8,6 @@ Choose the Selenium's port you want to expose (in order to connect from remote l
 
 Console will be accessible at [selenium.${DOMAIN}/grid/console](selenium.localhost/grid/console)
 
-Hub will be accessible at [docker_host_ip_or_domain:${SELENIUM_PORT}/wd/hub](docker_host_ip_or_domain:${SELENIUM_PORT}/wd/hub)
+Hub will be accessible at [docker_host_ip_or_${DOMAIN}:${SELENIUM_PORT}/wd/hub](docker_host_ip_or_${DOMAIN}:${SELENIUM_PORT}/wd/hub)
+
+You can scale up Firefox ou Chrome service to add node to the grid.
