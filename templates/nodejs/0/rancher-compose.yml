@@ -1,8 +1,7 @@
 .catalog:
-  name: NodeJS
-  version: latest
-  description: NodeJS Application Server
-  uuid: nodejs-0
+  name: 'NodeJS'
+  version: 'latest'
+  uuid: 'nodejs-0'
   questions:
   - variable: 'DOMAIN'
     description: 'Domain name'
@@ -40,5 +39,3 @@
     required: true
     default: '/var/node'
     type: 'string'
-node:
-  scale: 1

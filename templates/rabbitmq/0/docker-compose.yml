@@ -12,6 +12,6 @@ rabbitmq:
     traefik.frontend.value: 'rabbit.${DOMAIN}'
     traefik.port: '15672'
   restart: 'no'
-  hostname: rabbitmq
+  hostname: 'rabbitmq'
   cpu_shares: 512
   mem_limit: 536870912

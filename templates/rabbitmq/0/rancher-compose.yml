@@ -1,8 +1,7 @@
 .catalog:
-  name: RabbitMQ 
-  version: latest
-  description: AMQP 
-  uuid: rabbitmq-0
+  name: 'RabbitMQ '
+  version: 'latest'
+  uuid: 'rabbitmq-0'
   questions:
   - variable: 'DOMAIN'
     description: 'Domain name'
