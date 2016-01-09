@@ -1,5 +1,6 @@
 .catalog:
   name: 'Selenium'
+  description: 'Selenium'
   version: 'latest'
   uuid: 'selenium-0'
   questions:
