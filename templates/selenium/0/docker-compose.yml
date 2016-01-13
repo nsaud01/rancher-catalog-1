@@ -14,6 +14,9 @@ chrome:
   image: selenium/node-chrome:latest
   links:
   - hub:hub
+  volumes:
+  - /dev/shm:/dev/shm
+  privileged: true
   restart: 'no'
   cpu_shares: 512
   mem_limit: 536870912
