@@ -1,0 +1,18 @@
+gitlab:
+  image: gitlab/gitlab-ce:latest
+  hostname: gitlab.${DOMAIN}
+  ports:
+  - 22:${GITLAB_SSH_PORT}/tcp
+  labels:
+    traefik.port: '80'
+    traefik.frontend.rule: 'Host'
+    traefik.frontend.value: 'gitlab.${DOMAIN}'
+    traefik.frontend.passHostHeader: 'true'
+  environment:
+    GITLAB_ROOT_PASSWORD: 'password'
+  volumes:
+  - ${GITLAB_DIR}/config:/etc/gitlab
+  - ${GITLAB_DIR}/data:/var/opt/gitlab
+  restart: 'no'
+  cpu_shares: 512
+  mem_limit: 2147483648
