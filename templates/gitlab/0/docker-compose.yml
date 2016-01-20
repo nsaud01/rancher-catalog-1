@@ -2,7 +2,7 @@ gitlab:
   image: gitlab/gitlab-ce:latest
   hostname: gitlab.${DOMAIN}
   ports:
-  - 22:${GITLAB_SSH_PORT}/tcp
+  - ${GITLAB_SSH_PORT}:22/tcp
   labels:
     traefik.port: '80'
     traefik.frontend.rule: 'Host'
