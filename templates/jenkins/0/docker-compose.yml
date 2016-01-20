@@ -18,6 +18,8 @@ jenkins:
   mem_limit: 8589934592
 jenkins_data:
   image: vibioh/jenkins-data:latest
+  labels:
+    io.rancher.container.start_once: true
   volumes:
   - ${JENKINS_DIR}/data:/var/jenkins_home
   restart: 'no'
