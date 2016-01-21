@@ -1,7 +1,7 @@
 traefik:
   image: emilevauge/traefik:latest
   ports:
-  - 80:${LISTEN_PORT}/tcp
+  - ${LISTEN_PORT}:80/tcp
   labels:
     traefik.port: '${WEB_PORT}'
     traefik.frontend.rule: 'Host'
@@ -9,7 +9,7 @@ traefik:
     traefik.frontend.passHostHeader: 'true'
   volumes:
   - /var/run/docker.sock:/var/run/docker.sock
-  - /var/traefik/traefik.toml:/traefik.toml
+  - ${TRAEFIK_DIR}/traefik.toml:/traefik.toml
   read_only: true
   restart: 'no'
   cpu_shares: 256

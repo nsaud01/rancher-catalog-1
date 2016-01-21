@@ -21,3 +21,9 @@
     required: true
     default: 8080
     type: int
+  - variable: TRAEFIK_DIR
+    description: 'Directory where configuration is'
+    label: 'Directory:'
+    required: true
+    default: '/var/traefik'
+    type: 'string'
