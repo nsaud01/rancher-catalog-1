@@ -1,7 +1,7 @@
-hub:
+selenium:
   image: selenium/hub:latest
   ports:
-  - 4444:${SELENIUM_PORT}/tcp
+  - ${SELENIUM_PORT}:4444/tcp
   labels:
     traefik.frontend.passHostHeader: 'true'
     traefik.frontend.rule: 'Host'
@@ -13,7 +13,7 @@ hub:
 chrome:
   image: selenium/node-chrome:latest
   links:
-  - hub:hub
+  - selenium:hub
   volumes:
   - /dev/shm:/dev/shm
   privileged: true
@@ -23,7 +23,7 @@ chrome:
 firefox:
   image: selenium/node-firefox:latest
   links:
-  - hub:hub
+  - selenium:hub
   restart: 'no'
   cpu_shares: 512
   mem_limit: 536870912
