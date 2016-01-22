@@ -1,6 +1,7 @@
 wordpress:
   image: vibioh/wordpress:latest
   labels:
+    io.rancher.container.start_once: true
     io.rancher.sidekicks: mysql, php
     traefik.enable: false
   restart: 'no'
@@ -18,6 +19,8 @@ mysql:
   - MYSQL_PASSWORD=${WORDPRESS_PASSWORD}
   volumes_from:
   - wordpress
+  log_opt:
+    max-size: '50m'
   restart: 'no'
   read_only: true
   cpu_shares: 512
@@ -33,6 +36,8 @@ php:
   - mysql
   volumes_from:
   - wordpress
+  log_opt:
+    max-size: '50m'
   restart: 'no'
   read_only: true
   cpu_shares: 512

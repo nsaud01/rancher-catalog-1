@@ -7,6 +7,8 @@ selenium:
     traefik.frontend.rule: 'Host'
     traefik.frontend.value: 'selenium.${DOMAIN}'
     traefik.port: '4444'
+  log_opt:
+    max-size: '50m'
   restart: 'no'
   cpu_shares: 256
   mem_limit: 268435456
@@ -17,6 +19,8 @@ chrome:
   volumes:
   - /dev/shm:/dev/shm
   privileged: true
+  log_opt:
+    max-size: '50m'
   restart: 'no'
   cpu_shares: 512
   mem_limit: 536870912
@@ -24,6 +28,8 @@ firefox:
   image: selenium/node-firefox:latest
   links:
   - selenium:hub
+  log_opt:
+    max-size: '50m'
   restart: 'no'
   cpu_shares: 512
   mem_limit: 536870912

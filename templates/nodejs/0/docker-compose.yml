@@ -11,6 +11,8 @@ node:
   - ${WORKING_DIR}:/usr/src
   - ${NODE_GLOBAL_DIR}:/usr/node
   read_only: true
+  log_opt:
+    max-size: '50m'
   restart: 'no'
   cpu_shares: 512
   mem_limit: 268435456

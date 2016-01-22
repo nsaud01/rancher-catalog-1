@@ -8,6 +8,8 @@ maildev:
     traefik.frontend.value: 'maildev.${DOMAIN}'
     traefik.frontend.passHostHeader: 'true'
   read_only: true
+  log_opt:
+    max-size: '50m'
   restart: 'no'
   cpu_shares: 256
   mem_limit: 134217728

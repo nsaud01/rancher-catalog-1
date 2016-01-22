@@ -11,6 +11,8 @@ rabbitmq:
     traefik.frontend.passHostHeader: 'true'
     traefik.frontend.rule: 'Host'
     traefik.port: '15672'
+  log_opt:
+    max-size: '50m'
   restart: 'no'
   hostname: 'rabbitmq'
   cpu_shares: 512
