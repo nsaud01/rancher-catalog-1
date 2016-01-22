@@ -15,7 +15,7 @@ mysql:
   environment:
   - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD}
   - MYSQL_DATABASE=wordpress
-  - MYSQL_USER=${WORDPRESS_NAME}
+  - MYSQL_USER=wordpress
   - MYSQL_PASSWORD=${WORDPRESS_PASSWORD}
   volumes_from:
   - wordpress
@@ -39,6 +39,5 @@ php:
   log_opt:
     max-size: '50m'
   restart: 'no'
-  read_only: true
   cpu_shares: 512
   mem_limit: 268435456
