@@ -32,6 +32,9 @@ php:
     traefik.frontend.passHostHeader: 'true'
     traefik.frontend.rule: 'Host'
     traefik.port: '1080'
+  environment:
+    SMTP_URL: smtp
+    SMTP_PORT: 1025
   links:
   - mysql
   volumes_from:
