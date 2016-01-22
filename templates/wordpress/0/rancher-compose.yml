@@ -1,7 +1,7 @@
 .catalog:
-  name: Wordpress
+  name: 'Wordpress'
   version: latest
-  uuid: wordpress-external-0
+  uuid: 'wordpress-0'
   questions:
   - variable: DOMAIN
     description: 'Domain name'
@@ -26,10 +26,4 @@
     label: 'MySQL password:'
     required: true
     default: s3Cr3T!
-    type: string
-  - variable: WORDPRESS_DIR
-    description: 'Wordpress storage directory, will be suffixed with Wordpress name'
-    label: 'Directory:'
-    required: true
-    default: /var/wordpress
     type: string
