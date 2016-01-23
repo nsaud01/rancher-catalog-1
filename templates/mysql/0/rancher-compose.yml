@@ -27,7 +27,7 @@
     required: true
     default: password
     type: string
-  - variable: MYSQL_PASSWORD
+  - variable: MYSQL_ROOT_PASSWORD
     description: 'MySQL root password'
     label: 'MySQL password:'
     required: true
