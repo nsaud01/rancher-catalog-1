@@ -4,9 +4,6 @@ wordpress:
     io.rancher.container.start_once: true
     io.rancher.sidekicks: mysql, php
     traefik.enable: false
-  volumes:
-  - ${WORDPRESS_DIR}/${WORDPRESS_NAME}/mysql:/var/lib/mysql
-  - ${WORDPRESS_DIR}/${WORDPRESS_NAME}/www:/var/www/localhost
   restart: 'no'
   read_only: true
   cpu_shares: 128
@@ -16,10 +13,10 @@ mysql:
   labels:
     traefik.enable: false
   environment:
- - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD}
- - MYSQL_DATABASE=wordpress
- - MYSQL_USER=${WORDPRESS_NAME}
- - MYSQL_PASSWORD=${WORDPRESS_PASSWORD}
+  - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD}
+  - MYSQL_DATABASE=wordpress
+  - MYSQL_USER=wordpress
+  - MYSQL_PASSWORD=${WORDPRESS_PASSWORD}
   volumes_from:
   - wordpress
   log_opt:
@@ -35,6 +32,9 @@ php:
     traefik.frontend.passHostHeader: 'true'
     traefik.frontend.rule: 'Host'
     traefik.port: '1080'
+  environment:
+    SMTP_URL: smtp
+    SMTP_PORT: 1025
   links:
   - mysql
   volumes_from:
@@ -42,6 +42,5 @@ php:
   log_opt:
     max-size: '50m'
   restart: 'no'
-  read_only: true
   cpu_shares: 512
   mem_limit: 268435456
