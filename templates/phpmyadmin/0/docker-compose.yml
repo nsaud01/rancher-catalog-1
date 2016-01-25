@@ -10,6 +10,5 @@ mysql:
   log_opt:
     max-size: '50m'
   restart: 'no'
-  read_only: true
   cpu_shares: 512
   mem_limit: 268435456
