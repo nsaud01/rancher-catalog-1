@@ -1,4 +1,4 @@
-mysql:
+phpmyadmin:
   image: vibioh/phpmyadmin:latest
   labels:
     traefik.frontend.value: 'phpmyadmin.${DOMAIN}'
