@@ -17,7 +17,7 @@ gitlab:
       gitlab_rails['gitlab_email_display_name'] = 'GitLab on ${DOMAIN}'
       gitlab_rails['gitlab_email_reply_to'] = 'noreply@${DOMAIN}'
       gitlab_rails['gitlab_ssh_host'] = '${DOMAIN}'
-      gitlab_rails['gitlab_shell_ssh_port'] = 10022
+      gitlab_rails['gitlab_shell_ssh_port'] = ${GITLAB_SSH_PORT}
       gitlab_shell['log_level'] = 'WARN'
       gitlab_rails['smtp_enable'] = true
       gitlab_rails['smtp_address'] = 'maildev.${DOMAIN}'
